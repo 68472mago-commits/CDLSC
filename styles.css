@@ -1,0 +1,260 @@
+/* ============================================
+   VARIABLES GLOBALES
+   ============================================ */
+:root {
+  --orange: #F1821A;
+  --teal: #00C3B3;
+  --navy: #1B2A6B;
+  --ink: #1B2430;
+  --ink-soft: #5B6470;
+  --paper: #FBF9F6;
+  --panel: #FFFFFF;
+  --line: #E7E2D9;
+  --peach: #FDF0E4;
+}
+
+/* ============================================
+   RESET Y BASE
+   ============================================ */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.sheet {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+header {
+  background: var(--panel);
+  padding: 30px 48px 26px 48px;
+  border-bottom: 4px solid var(--orange);
+}
+
+header .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+/* 🖼️ LOGO MÁS GRANDE */
+header img.logo {
+  height: 90px;
+  display: block;
+}
+
+.info-panel {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 28px;
+  row-gap: 5px;
+  flex-shrink: 0;
+  padding-left: 22px;
+  border-left: 2px solid #D9822B;
+}
+
+.info-panel .field { font-size: 12px; white-space: nowrap; }
+.info-panel .field b {
+  color: var(--orange);
+  font-style: italic;
+  font-weight: 800;
+}
+.info-panel .field span {
+  color: var(--ink);
+  font-style: italic;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0 0 8px 0;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.15;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+/* ============================================
+   INTRO
+   ============================================ */
+.intro {
+  padding: 26px 48px 6px 48px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 760px;
+}
+
+/* ============================================
+   TARJETAS DE TEMAS (topic)
+   ============================================ */
+.topic {
+  margin: 34px 48px 0 48px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27, 42, 107, 0.05);
+}
+
+.topic-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 26px;
+  color: #fff;
+}
+
+.topic-head .icon {
+  font-size: 30px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.topic-head h2 { margin: 0; font-size: 23px; font-weight: 800; }
+.topic-head p { margin: 2px 0 0 0; font-size: 13px; opacity: 0.92; }
+
+/* Colores de cada tema */
+.t-organizacional .topic-head { background: linear-gradient(120deg, var(--navy), #2B3E9C); }
+.t-servicio .topic-head { background: linear-gradient(120deg, var(--teal), #00A89B); }
+.t-calidad .topic-head { background: linear-gradient(120deg, var(--orange), #D96A0E); }
+
+/* ============================================
+   📸 FOTOS DE CADA SECCIÓN
+   ============================================ */
+.topic-photo {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ============================================
+   GRID DE TARJETAS
+   ============================================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.card {
+  padding: 20px 20px 22px 20px;
+  border-right: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+}
+
+.card:last-child { border-right: none; }
+
+.card .tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 13.5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.t-organizacional .card .tag { color: var(--navy); }
+.t-servicio .card .tag { color: #00877D; }
+.t-calidad .card .tag { color: var(--orange); }
+
+.card p,
+.card ul { font-size: 13.5px; color: var(--ink); margin: 0; }
+.card ul { padding-left: 18px; margin-top: 2px; }
+.card li { margin-bottom: 6px; }
+
+/* ============================================
+   REFERENCIAS (con enlaces clicables)
+   ============================================ */
+.refs {
+  margin: 40px 48px 0 48px;
+  padding: 24px 26px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.refs h3 {
+  margin: 0 0 12px 0;
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.refs ol { margin: 0; padding-left: 20px; }
+
+.refs li {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* 🔗 Estilo de los enlaces */
+.refs a {
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--navy);
+  font-style: normal;
+  word-break: break-all;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.refs a:hover {
+  color: var(--orange);
+  border-bottom-color: var(--orange);
+  border-bottom-style: solid;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  margin: 26px 48px 0 48px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 880px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .card:nth-child(2) { border-right: none; }
+  .card:nth-child(3),
+  .card:nth-child(4) { border-top: 1px solid var(--line); }
+
+  .topic-photo { height: 180px; }
+  header img.logo { height: 60px; }
+}
